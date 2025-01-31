@@ -1,36 +1,35 @@
-import Nav from "@/components/ui/nav";
-
 const Home = () => {
   return (
     <div>
-      <Nav />
-      {/* <div className="bg-sky relative z-0 h-[50vh] border-4 border-red-500">
+      <div className="tablet:h-[750px] laptop:h-[1300px] relative z-0 h-[400px] border-4 border-red-500">
         <img
-          src="/public/hero/sky 1.png"
+          src="/hero/background.png"
           alt=""
-          className="absolute bottom-40"
+          className="absolute z-10 h-full w-full object-cover"
         />
         <img
-          src="/public/hero/Horizon.png"
+          src="/hero/Overlay.png"
           alt=""
-          className="absolute bottom-0 z-10 w-full"
+          className="absolute top-0 z-50 h-full w-full"
+        />
+
+        <img
+          src="/hero/Rocks Left.png"
+          alt=""
+          className="laptop:w-6/12 tablet:bottom-20 absolute bottom-10 left-0 z-30 w-1/2 object-cover"
         />
         <img
-          src="/public/hero/Overlay.png"
+          src="/hero/Rocks Right.png"
           alt=""
-          className="absolute top-0 z-30 h-full w-full"
+          className="laptop:w-5/12 tablet:bottom-20 absolute bottom-10 right-0 z-30 w-1/2 object-cover"
         />
-        <div className="absolute bottom-0 z-20 flex w-full justify-between">
-          <img src="/public/hero/Rocks Left.png" alt="" className="h-[90px]" />
-          <img src="/public/hero/Rocks Right.png" alt="" className="h-[90px]" />
-        </div>
+
         <img
-          src="/public/hero/partition.png"
+          src="/hero/partition.png"
           alt=""
-          className="absolute bottom-0 z-30 h-[70px] w-full"
+          className="absolute bottom-0 z-50 w-full"
         />
       </div>
-      <div className="bg-theme-brown h-screen"></div> */}
     </div>
   );
 };
