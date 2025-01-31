@@ -1,46 +1,24 @@
-import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
+import { FC } from "react";
 
-import { cn } from "@/lib/utils";
+type Props = {
+  text: string;
+};
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
-  {
-    variants: {
-      variant: {
-        default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-      },
-      size: {
-        default: "h-9 px-4 py-2",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  },
-);
+const Button: FC<Props> = (props) => {
+  return (
+    <button className="bg-theme-black laptop:h-[84px] laptop:w-[495px] group flex h-[39px] w-[230px] rounded-[46px]">
+      <div className="bg-theme-yellow border-theme-black laptop:w-[495px] laptop:h-[84px] relative -top-[7px] flex h-[39px] w-[230px] items-center justify-center space-x-3 rounded-[46px] border-4 transition-all last:-top-[14px] group-hover:-top-0">
+        <img
+          src="/hero/Steam.svg"
+          alt=""
+          className="laptop:w-[53px] laptop:h-[53px]"
+        />
+        <p className="font-geist laptop:text-[28px] laptop:tracking-[0.6px] laptop:leading-[28px] text-[13px] font-extrabold tracking-[0.28px]">
+          {props.text}
+        </p>
+      </div>
+    </button>
+  );
+};
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
-  },
-);
-Button.displayName = "Button";
-
-export { Button, buttonVariants };
+export default Button;
