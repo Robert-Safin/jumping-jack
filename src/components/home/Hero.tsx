@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="tablet:h-[950px] laptop:h-[1200px] relative z-0 h-[400px] overflow-hidden">
         <div className="items-center-center absolute right-0 top-0 z-50 flex h-full w-full flex-col items-center">
           <img
-            src="/hero/Title.png"
+            src="/hero/title.webp"
             alt=""
             className="tablet:mt-[200px] laptop:w-[530px] laptop:h-[309px] tablet:mb-[100px] mx-auto mt-[60px] h-[159px] w-[273px]"
           />
@@ -17,24 +17,24 @@ const Hero = () => {
           </p>
         </div>
         <img
-          src="/hero/background.png"
+          src="/hero/background.webp"
           alt=""
           className="absolute z-10 h-full w-full object-cover"
         />
         <img
-          src="/hero/Overlay.png"
+          src="/hero/overlay.webp"
           alt=""
           className="pointer-events-none absolute top-0 z-40 h-full w-full"
         />
 
         <img
-          src="/hero/jack.png"
+          src="/hero/jack.webp"
           alt=""
           className="absolute bottom-[20px] z-30 w-full"
         />
 
         <img
-          src="/hero/partition.png"
+          src="/hero/partition.webp"
           alt=""
           className="absolute bottom-0 z-40 w-full"
         />

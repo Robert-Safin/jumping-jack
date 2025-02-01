@@ -14,7 +14,7 @@ const Nav = () => {
   return (
     <nav className="bg-theme-brown-2 tablet:h-[75px] absolute top-0 z-50 flex h-[56px] w-full items-center justify-between px-[12px] py-[16px]">
       <img
-        src="/hero/Title.png"
+        src="/hero/title.webp"
         alt="jumping jack logo"
         className="laptop:w-[100px] laptop:h-[50px] h-[30px] w-[60px]"
       />
