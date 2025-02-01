@@ -19,7 +19,6 @@ const Nav = () => {
   });
 
   useEffect(() => {
-    // Set the deadline to 19 days, 19 hours from now
     const deadline = new Date();
     deadline.setDate(deadline.getDate() + 19);
     deadline.setHours(deadline.getHours() + 19);
@@ -56,19 +55,23 @@ const Nav = () => {
         className="h-[30px] w-[60px] laptop:h-[50px] laptop:w-[100px]"
       />
       <p className="text-theme-blue w-[246px] text-center font-geist text-[13px] font-black leading-[18px] laptop:w-full laptop:text-[32px]">
-        JUMP CHALLENGE ENDS IN: {""}
-        {timeLeft.days} days {String(timeLeft.hours).padStart(2, "0")}:
+        {lan == "eng"
+          ? "JUMP CHALLENGE ENDS IN"
+          : "O DESAFIO DE SALTO TERMINA EM"}
+        : {""}
+        {timeLeft.days} {lan == "eng" ? "days" : "dias"}{" "}
+        {String(timeLeft.hours).padStart(2, "0")}:
         {String(timeLeft.minutes).padStart(2, "0")}:
         {String(timeLeft.seconds).padStart(2, "0")}
       </p>
       <Select onValueChange={setLan} value={lan}>
         <SelectTrigger className="w-[128px]">
-          <SelectValue defaultValue={"English"} />
+          <SelectValue defaultValue={"eng"} />
         </SelectTrigger>
         <SelectContent className="bg-theme-brown-2">
           <SelectGroup>
-            <SelectItem value="english">English</SelectItem>
-            <SelectItem value="portuguese">Portuguese</SelectItem>
+            <SelectItem value="eng">English</SelectItem>
+            <SelectItem value="por">Português</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>

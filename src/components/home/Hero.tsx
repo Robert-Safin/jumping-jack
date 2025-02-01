@@ -1,27 +1,29 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import Button from "../ui/button";
+import useLocalization from "@/lib/useLocalization";
 
 const Hero = () => {
   const ref = useRef(null);
-
+  const { lan } = useLocalization();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
 
+  const springConfig = { stiffness: 70, damping: 10 }; // Less intense animation
+
   const jackY = useSpring(
-    useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+    useTransform(scrollYProgress, [0, 1], ["0%", "60%"]),
+    springConfig,
   );
   const titleY = useSpring(
-    useTransform(scrollYProgress, [0, 1], ["0%", "50%"]),
+    useTransform(scrollYProgress, [0, 1], ["0%", "30%"]),
+    springConfig,
   );
-  const partitionY = useSpring(
-    useTransform(scrollYProgress, [0, 1], ["0%", "0%"]),
-  );
-
   const horizonY = useSpring(
-    useTransform(scrollYProgress, [0, 1], ["0%", "40%"]),
+    useTransform(scrollYProgress, [0, 1], ["0%", "20%"]),
+    springConfig,
   );
 
   return (
@@ -36,19 +38,23 @@ const Hero = () => {
         >
           <img
             src="/hero/title.webp"
-            alt=""
+            alt="Title"
+            loading="lazy"
             className="mx-auto mt-[60px] h-[159px] w-[273px] tablet:mb-[100px] tablet:mt-[200px] laptop:h-[309px] laptop:w-[530px]"
           />
-          <Button text="PLAY & WIN NOW!" />
+          <Button
+            text={lan == "eng" ? "PLAY & WIN NOW!" : "JOGUE E GANHE AGORA!"}
+          />
           <p className="text-theme-blue mt-[20px] font-coustard font-black leading-[26px] tracking-[0.25px] laptop:mt-[40px] laptop:text-[48px]">
-            JUMP HIGH, EARN $100
+            {lan == "eng" ? "JUMP HIGH, EARN $100" : "SALTE ALTO, GANHE $ 100"}
           </p>
         </motion.div>
 
         {/* Background */}
         <motion.img
           src="/hero/background.webp"
-          alt=""
+          alt="background"
+          loading="lazy"
           className="absolute z-10 h-full w-full object-cover"
           style={{ y: horizonY }}
         />
@@ -56,7 +62,8 @@ const Hero = () => {
         {/* Overlay */}
         <motion.img
           src="/hero/overlay.webp"
-          alt=""
+          alt="shadow overlay"
+          loading="lazy"
           className="pointer-events-none absolute top-0 z-40 h-full w-full"
           style={{ y: horizonY }}
         />
@@ -70,13 +77,11 @@ const Hero = () => {
         />
 
         {/* Partition */}
-        <motion.img
+        <img
           src="/hero/partition.webp"
-          alt=""
+          alt="front rocks"
+          loading="lazy"
           className="absolute bottom-0 z-40 w-full"
-          style={{
-            y: partitionY,
-          }}
         />
       </div>
     </>

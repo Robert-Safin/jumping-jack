@@ -2,8 +2,11 @@ import { FaDiscord } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import { IoLogoYoutube } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa6";
+import useLocalization from "@/lib/useLocalization";
 
 const Footer = () => {
+  const { lan } = useLocalization();
+
   return (
     <div>
       <div className="mx-auto max-w-[1440px]">
@@ -32,7 +35,12 @@ const Footer = () => {
             </div>
 
             <div className="text-center font-geist text-[11px] leading-[24px] tracking-[0.2px] text-white laptop:text-left laptop:text-[14px]">
-              <p>©2025 Room Games, All Rights Reserved</p>
+              <p>
+                ©2025 Room Games,
+                {lan === "eng"
+                  ? " All Rights Reserved"
+                  : " Todos os direitos reservados"}
+              </p>
             </div>
           </div>
         </div>

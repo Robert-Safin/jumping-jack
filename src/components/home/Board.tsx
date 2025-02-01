@@ -1,15 +1,19 @@
 import { Trophy } from "lucide-react";
 import Button from "../ui/button";
 import Footer from "../Footer";
+import useLocalization from "@/lib/useLocalization";
 
 const Board = () => {
+  const { lan } = useLocalization();
+
   return (
     <div className="relative z-0">
       <img src="/hero/partition.webp" alt="" className="w-full rotate-180" />
       <img
         src="/hero/gallery-bg.webp"
-        alt=""
+        alt="background"
         className="absolute top-0 -z-10 h-full w-full object-cover"
+        loading="lazy"
       />
       <div className="z-20 mx-auto flex max-w-[1440px] justify-center px-3 pt-[40px]">
         <div className="flex flex-col-reverse laptop:flex-row laptop:space-x-4">
@@ -18,7 +22,9 @@ const Board = () => {
               <video muted controls>
                 <source src="/hero/old/jackshort.webm" type="video/webm" />
                 <source src="/hero/old/jackfinal.webm" type="video/webm" />
-                Your browser does not support the video tag.
+                {lan === "eng"
+                  ? "Your browser does not support the video tag."
+                  : "Seu navegador não suporta a tag de vídeo."}
               </video>
             </div>
 
@@ -27,11 +33,11 @@ const Board = () => {
                 <div className="flex items-center space-x-2 laptop:space-x-4">
                   <div className="bg-theme-blue h-2 w-2 rounded-full laptop:h-3 laptop:w-3" />
                   <h5 className="font-geist text-[22px] font-black leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px] laptop:tracking-[0.6px]">
-                    LIVE ACTIVITY
+                    {lan === "eng" ? "LIVE ACTIVITY" : "ATIVIDADE AO VIVO"}
                   </h5>
                 </div>
                 <p className="text-theme-blue bg-theme-blue border-theme-blue rounded-[7.2px] border-[1px] bg-opacity-[16%] p-2 font-geist font-[12px] leading-[12px] laptop:text-[20px] laptop:leading-[20px]">
-                  4 Players
+                  4 {lan === "eng" ? "Players" : "Jogadoras"}
                 </p>
               </div>
               <div className="flex items-center space-x-4 laptop:space-x-8">
@@ -41,7 +47,7 @@ const Board = () => {
                     Kralion
                   </p>
                   <p className="text-theme-blue font-geist text-[12px] font-black leading-[12px] laptop:text-[17px] laptop:leading-[20px]">
-                    4 minutes ago
+                    4 {lan === "eng" ? "minutes ago" : "minutos atrás"}
                   </p>
                 </div>
               </div>
@@ -53,7 +59,7 @@ const Board = () => {
               <div className="flex items-center space-x-2 laptop:space-x-4">
                 <div className="bg-theme-blue h-2 w-2 rounded-full laptop:h-3 laptop:w-3" />
                 <h5 className="font-geist text-[22px] font-black leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px]">
-                  LEADERBOARD
+                  {lan === "eng" ? "LEADERBOARD" : "RANKING"}
                 </h5>
               </div>
               <div className="text-theme-blue bg-theme-blue border-theme-blue flex items-center space-x-2 rounded-[7.2px] border-[1px] bg-opacity-[16%] p-2 font-geist font-[12px] leading-[12px] laptop:text-[20px] laptop:leading-[20px]">
@@ -91,11 +97,17 @@ const Board = () => {
         </div>
       </div>
       <div className="mb-[70px] mt-[40px] flex justify-center laptop:mb-[90px] laptop:mt-[60px]">
-        <Button text="JUMP IN & WIN BIG!" />
+        <Button
+          text={lan == "eng" ? "JUMP IN & WIN BIG!" : "ENTRE E GANHE MUITO!"}
+        />
       </div>
       <p className="text-center font-geist text-[11px] font-semibold leading-[11px] text-theme-yellow">
-        18+ only. By playing, you agree to our{" "}
-        <span className="underline">Terms & Conditions </span>
+        {lan == "eng"
+          ? "18+ only. By playing, you agree to our "
+          : "Somente maiores de 18 anos. Ao jogar, você concorda com nossos "}
+        <span className="underline">
+          {lan == "eng" ? "Terms & Conditions" : "Termos e Condições"}
+        </span>
       </p>
       <Footer />
     </div>

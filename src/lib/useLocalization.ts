@@ -1,12 +1,14 @@
 import { create } from 'zustand'
 
+
+
 type Store = {
   lan: string
-  setLan: (lan: string) => void
+  setLan: (lan: "eng" | "por") => void
 }
 
 const useLocalization = create<Store>()((set) => ({
-  lan: 'english',
+  lan: 'eng',
   setLan: (lan) => set({ lan }),
 }))
 
