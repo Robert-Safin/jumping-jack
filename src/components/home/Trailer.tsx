@@ -10,8 +10,8 @@ const Trailer = () => {
           controls
           className="mb-[20px] mt-[40px] h-[196px] w-full border tablet:h-[450px] laptop:h-[720px]"
         >
-          <source src="/public/hero/old/jackfinal.webm" type="video/webm" />
-          <source src="/public/hero/old/jackshort.webm" type="video/webm" />
+          <source src="/hero/old/jackfinal.webm" type="video/webm" />
+          <source src="/hero/old/jackshort.webm" type="video/webm" />
         </video>
         <iframe
           className="mx-auto w-full px-[12px] laptop:w-[942px]"

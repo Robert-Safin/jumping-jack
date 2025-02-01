@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="mx-auto max-w-[1440px]">
         <div className="flex flex-col items-center py-[24px] laptop:items-start">
           <img
-            src="/public/hero/room.svg"
+            src="/hero/room.svg"
             alt=""
             className="h-[69px] w-[105px] object-cover laptop:h-[131px] laptop:w-[200px]"
           />
