@@ -14,12 +14,14 @@ const Hero = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    // offset: ["start end", "end start"],
+    offset: ["start start", "end end"],
   });
 
-  const jackY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
-  const titleY = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
-  const partitionY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const jackY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]); // Was 20%
+  // const titleY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]); // Was -40%
+  const partitionY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]); // Was 0%
+
+  const horizonY = useTransform(scrollYProgress, [0, 1], ["0%", "0%"]);
 
   return (
     <>
@@ -28,7 +30,7 @@ const Hero = () => {
         className="relative z-0 h-[400px] overflow-hidden tablet:h-[950px] laptop:h-[1200px]"
       >
         <motion.div
-          style={{ y: titleY }}
+          // style={{ y: titleY }}
           transition={transition}
           className="items-center-center absolute right-0 top-0 z-50 flex h-full w-full flex-col items-center"
         >
@@ -45,17 +47,21 @@ const Hero = () => {
         </motion.div>
 
         {/* Background */}
-        <img
+        <motion.img
           src="/hero/background.webp"
           alt=""
           className="absolute z-10 h-full w-full object-cover"
+          style={{ y: horizonY }}
+          transition={transition}
         />
 
         {/* Overlay */}
-        <img
+        <motion.img
           src="/hero/overlay.webp"
           alt=""
           className="pointer-events-none absolute top-0 z-40 h-full w-full"
+          style={{ y: horizonY }}
+          transition={transition}
         />
 
         {/* Parallax Effect on Jack Image */}
