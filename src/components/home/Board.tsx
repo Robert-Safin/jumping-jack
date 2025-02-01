@@ -2,6 +2,7 @@ import { Trophy } from "lucide-react";
 import Button from "../ui/button";
 import Footer from "../Footer";
 import useLocalization from "@/lib/useLocalization";
+import { Link } from "react-router-dom";
 
 const Board = () => {
   const { lan } = useLocalization();
@@ -33,7 +34,7 @@ const Board = () => {
                 <div className="flex items-center space-x-2 laptop:space-x-4">
                   <div className="bg-theme-blue h-2 w-2 rounded-full laptop:h-3 laptop:w-3" />
                   <h5 className="font-geist text-[22px] font-black leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px] laptop:tracking-[0.6px]">
-                    {lan === "eng" ? "LIVE ACTIVITY" : "ATIVIDADE AO VIVO"}
+                    {lan === "eng" ? "LIVE ACTIVITY" : "AO VIVO"}
                   </h5>
                 </div>
                 <p className="text-theme-blue bg-theme-blue border-theme-blue rounded-[7.2px] border-[1px] bg-opacity-[16%] p-2 font-geist font-[12px] leading-[12px] laptop:text-[20px] laptop:leading-[20px]">
@@ -101,12 +102,14 @@ const Board = () => {
           text={lan == "eng" ? "JUMP IN & WIN BIG!" : "ENTRE E GANHE MUITO!"}
         />
       </div>
-      <p className="text-center font-geist text-[11px] font-semibold leading-[11px] text-theme-yellow">
+      <p className="mx-auto max-w-[300px] text-center font-geist text-[11px] font-semibold leading-[11px] text-theme-yellow">
         {lan == "eng"
           ? "18+ only. By playing, you agree to our "
           : "Somente maiores de 18 anos. Ao jogar, você concorda com nossos "}
         <span className="underline">
-          {lan == "eng" ? "Terms & Conditions" : "Termos e Condições"}
+          <Link to={"/terms-and-conditions"}>
+            {lan == "eng" ? "Terms & Conditions" : "Termos e Condições"}
+          </Link>
         </span>
       </p>
       <Footer />

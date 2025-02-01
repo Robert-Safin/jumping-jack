@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/select";
 import useLocalization from "@/lib/useLocalization";
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 const Nav = () => {
   const { lan, setLan } = useLocalization();
   const [timeLeft, setTimeLeft] = useState({
@@ -49,12 +49,14 @@ const Nav = () => {
 
   return (
     <nav className="absolute top-0 z-50 flex h-[56px] w-full items-center justify-between bg-theme-brown-2 px-[12px] py-[16px] tablet:h-[75px]">
-      <img
-        src="/hero/title.webp"
-        alt="jumping jack logo"
-        className="h-[30px] w-[60px] laptop:h-[50px] laptop:w-[100px]"
-      />
-      <p className="text-theme-blue w-[246px] text-center font-geist text-[13px] font-black leading-[18px] laptop:w-full laptop:text-[32px]">
+      <Link to={"/"}>
+        <img
+          src="/hero/title.webp"
+          alt="jumping jack logo"
+          className="h-[30px] w-[60px] laptop:h-[50px] laptop:w-[100px]"
+        />
+      </Link>
+      <p className="text-theme-blue w-[246px] text-center font-geist text-[11px] font-black leading-[18px] laptop:w-full laptop:text-[32px]">
         {lan == "eng"
           ? "JUMP CHALLENGE ENDS IN"
           : "O DESAFIO DE SALTO TERMINA EM"}
@@ -65,13 +67,17 @@ const Nav = () => {
         {String(timeLeft.seconds).padStart(2, "0")}
       </p>
       <Select onValueChange={setLan} value={lan}>
-        <SelectTrigger className="w-[128px]">
+        <SelectTrigger className="w-[128px] text-[11px]">
           <SelectValue defaultValue={"eng"} />
         </SelectTrigger>
         <SelectContent className="bg-theme-brown-2">
           <SelectGroup>
-            <SelectItem value="eng">English</SelectItem>
-            <SelectItem value="por">Português</SelectItem>
+            <SelectItem value="eng" className="text-[11px]">
+              English
+            </SelectItem>
+            <SelectItem value="por" className="text-[11px]">
+              Português
+            </SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
