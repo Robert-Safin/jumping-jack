@@ -1,10 +1,37 @@
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Button from "../ui/button";
 
 const Hero = () => {
+  const transition = {
+    type: "spring",
+    stiffness: 50,
+    damping: 5,
+    mass: 0.5,
+  };
+
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    // offset: ["start end", "end start"],
+  });
+
+  const jackY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
+  const titleY = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
+  const partitionY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
   return (
     <>
-      <div className="relative z-0 h-[400px] overflow-hidden tablet:h-[950px] laptop:h-[1200px]">
-        <div className="items-center-center absolute right-0 top-0 z-50 flex h-full w-full flex-col items-center">
+      <div
+        ref={ref}
+        className="relative z-0 h-[400px] overflow-hidden tablet:h-[950px] laptop:h-[1200px]"
+      >
+        <motion.div
+          style={{ y: titleY }}
+          transition={transition}
+          className="items-center-center absolute right-0 top-0 z-50 flex h-full w-full flex-col items-center"
+        >
           <img
             src="/hero/title.webp"
             alt=""
@@ -15,28 +42,40 @@ const Hero = () => {
             Every mistake is a lesson. <br />
             You'll be very educated.
           </p>
-        </div>
+        </motion.div>
+
+        {/* Background */}
         <img
           src="/hero/background.webp"
           alt=""
           className="absolute z-10 h-full w-full object-cover"
         />
+
+        {/* Overlay */}
         <img
           src="/hero/overlay.webp"
           alt=""
           className="pointer-events-none absolute top-0 z-40 h-full w-full"
         />
 
-        <img
+        {/* Parallax Effect on Jack Image */}
+        <motion.img
           src="/hero/jack.webp"
           alt=""
           className="absolute bottom-[20px] z-30 w-full"
+          style={{ y: jackY }}
+          transition={transition}
         />
 
-        <img
+        {/* Partition */}
+        <motion.img
           src="/hero/partition.webp"
           alt=""
           className="absolute bottom-0 z-40 w-full"
+          style={{
+            y: partitionY,
+          }}
+          transition={transition}
         />
       </div>
     </>
