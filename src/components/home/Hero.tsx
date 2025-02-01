@@ -10,16 +10,18 @@ const Hero = () => {
     offset: ["start start", "end end"],
   });
 
-  const jackY = useSpring(useTransform(scrollYProgress, [0, 1], ["0%", "5%"]));
-  const titleY = useSpring(
+  const jackY = useSpring(
     useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
   );
+  const titleY = useSpring(
+    useTransform(scrollYProgress, [0, 1], ["0%", "50%"]),
+  );
   const partitionY = useSpring(
-    useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+    useTransform(scrollYProgress, [0, 1], ["0%", "0%"]),
   );
 
   const horizonY = useSpring(
-    useTransform(scrollYProgress, [0, 1], ["0%", "-90%"]),
+    useTransform(scrollYProgress, [0, 1], ["0%", "40%"]),
   );
 
   return (
@@ -37,10 +39,9 @@ const Hero = () => {
             alt=""
             className="mx-auto mt-[60px] h-[159px] w-[273px] tablet:mb-[100px] tablet:mt-[200px] laptop:h-[309px] laptop:w-[530px]"
           />
-          <Button text="FREE DOWNLOAD FOR PC" />
-          <p className="mt-[20px] text-center font-coustard text-[12px] font-black leading-[14px] tracking-[0.3px] text-theme-white-1 tablet:mt-[20px] laptop:text-[20px] laptop:leading-[22px] laptop:tracking-[0.6px]">
-            Every mistake is a lesson. <br />
-            You'll be very educated.
+          <Button text="PLAY & WIN NOW!" />
+          <p className="text-theme-blue mt-[20px] font-coustard font-black leading-[26px] tracking-[0.25px] laptop:mt-[40px] laptop:text-[48px]">
+            JUMP HIGH, EARN $100
           </p>
         </motion.div>
 

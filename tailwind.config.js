@@ -20,7 +20,7 @@ export default {
         "theme-black": "#0E1013",
         "theme-brown-1":"#6E442B",
         "theme-brown-2":"#311F15",
-        "sky": "rgb(139,190,197)"
+        "theme-blue": "#7BC2C6"
       },
     },
   },

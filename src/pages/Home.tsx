@@ -1,14 +1,14 @@
-import Gallery from "@/components/home/Gallery";
 import Hero from "@/components/home/Hero";
-import Trailer from "@/components/home/Trailer";
+import Competition from "@/components/home/Competition";
+import Board from "@/components/home/Board";
 
 const Home = () => {
   return (
-    <div className="min-h-[300vh]">
+    <>
       <Hero />
-      <Trailer />
-      <Gallery />
-    </div>
+      <Competition />
+      <Board />
+    </>
   );
 };
 

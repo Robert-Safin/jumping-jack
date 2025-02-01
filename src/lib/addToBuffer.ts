@@ -1,6 +1,6 @@
 
 
-type BufferArgs = {
+export type BufferArgs = {
   eventType: string,
   customParams : {
     click_x: number,

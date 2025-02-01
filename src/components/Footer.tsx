@@ -5,7 +5,7 @@ import { FaFacebook } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="bg-theme-brown-2">
+    <div>
       <div className="mx-auto max-w-[1440px]">
         <div className="flex flex-col items-center py-[24px] laptop:items-start">
           <img
@@ -32,7 +32,6 @@ const Footer = () => {
             </div>
 
             <div className="text-center font-geist text-[11px] leading-[24px] tracking-[0.2px] text-white laptop:text-left laptop:text-[14px]">
-              <p>Terms of Service / Privacy Policy</p>
               <p>©2025 Room Games, All Rights Reserved</p>
             </div>
           </div>
