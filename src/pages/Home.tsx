@@ -6,8 +6,8 @@ const Home = () => {
   return (
     <div className="min-h-[300vh]">
       <Hero />
-      {/* <Trailer />
-      <Gallery /> */}
+      <Trailer />
+      <Gallery />
     </div>
   );
 };

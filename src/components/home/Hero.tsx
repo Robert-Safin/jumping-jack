@@ -1,15 +1,8 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import Button from "../ui/button";
 
 const Hero = () => {
-  const transition = {
-    type: "spring",
-    stiffness: 50,
-    damping: 5,
-    mass: 0.5,
-  };
-
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -17,21 +10,26 @@ const Hero = () => {
     offset: ["start start", "end end"],
   });
 
-  const jackY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]); // Was 20%
-  // const titleY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]); // Was -40%
-  const partitionY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]); // Was 0%
+  const jackY = useSpring(useTransform(scrollYProgress, [0, 1], ["0%", "5%"]));
+  const titleY = useSpring(
+    useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+  );
+  const partitionY = useSpring(
+    useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+  );
 
-  const horizonY = useTransform(scrollYProgress, [0, 1], ["0%", "0%"]);
+  const horizonY = useSpring(
+    useTransform(scrollYProgress, [0, 1], ["0%", "-90%"]),
+  );
 
   return (
     <>
       <div
         ref={ref}
-        className="relative z-0 h-[400px] overflow-hidden tablet:h-[950px] laptop:h-[1200px]"
+        className="relative z-0 h-[400px] overflow-hidden tablet:h-[720px] laptop:h-[1200px]"
       >
         <motion.div
-          // style={{ y: titleY }}
-          transition={transition}
+          style={{ y: titleY }}
           className="items-center-center absolute right-0 top-0 z-50 flex h-full w-full flex-col items-center"
         >
           <img
@@ -52,7 +50,6 @@ const Hero = () => {
           alt=""
           className="absolute z-10 h-full w-full object-cover"
           style={{ y: horizonY }}
-          transition={transition}
         />
 
         {/* Overlay */}
@@ -61,7 +58,6 @@ const Hero = () => {
           alt=""
           className="pointer-events-none absolute top-0 z-40 h-full w-full"
           style={{ y: horizonY }}
-          transition={transition}
         />
 
         {/* Parallax Effect on Jack Image */}
@@ -70,7 +66,6 @@ const Hero = () => {
           alt=""
           className="absolute bottom-[20px] z-30 w-full"
           style={{ y: jackY }}
-          transition={transition}
         />
 
         {/* Partition */}
@@ -81,7 +76,6 @@ const Hero = () => {
           style={{
             y: partitionY,
           }}
-          transition={transition}
         />
       </div>
     </>
