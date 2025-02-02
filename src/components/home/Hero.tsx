@@ -40,8 +40,6 @@ const Hero = () => {
         >
           <img
             src="/hero/title.webp"
-            width="273"
-            height="159"
             alt="Title"
             loading="lazy"
             className="mx-auto mt-[60px] h-[159px] w-[273px] tablet:mb-[20px] tablet:mt-[150px] tablet:h-[200px] tablet:w-auto laptop:mb-[70px] laptop:h-[309px] laptop:w-[530px]"
@@ -57,22 +55,18 @@ const Hero = () => {
         {/* Background */}
         <motion.img
           src="/hero/background.webp"
-          width="450"
-          height="600"
           srcSet="/hero/background-small.webp 600w, /hero/background.webp 1200w"
           sizes="(max-width: 768px) 600px, 1200px"
           alt="background"
           className="absolute z-10 h-full w-full object-cover"
-          style={{ y: loaded ? horizonY : "0%" }} // Only animate after load
+          style={{ y: loaded ? horizonY : "0%" }}
           fetchPriority="high"
-          onLoad={() => setLoaded(true)} // Set state when image loads
+          onLoad={() => setLoaded(true)}
         />
 
         {/* Overlay */}
         <motion.img
           src="/hero/overlay.webp"
-          width="450"
-          height="600"
           alt="shadow overlay"
           fetchPriority="high"
           className="pointer-events-none absolute top-0 z-40 h-full w-full"
@@ -82,8 +76,6 @@ const Hero = () => {
         {/* Parallax Effect on Jack Image */}
         <motion.img
           src="/hero/jack.webp"
-          width="450"
-          height="500"
           alt="jumping jack"
           className="absolute bottom-[20px] z-30 w-full"
           style={{ y: jackY }}
@@ -91,8 +83,6 @@ const Hero = () => {
 
         {/* Partition */}
         <img
-          width="350"
-          height="600"
           src="/hero/partition.webp"
           alt="front rocks"
           loading="lazy"
