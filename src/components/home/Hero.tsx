@@ -11,18 +11,18 @@ const Hero = () => {
     offset: ["start start", "end end"],
   });
 
-  const springConfig = { stiffness: 70, damping: 10 }; // Less intense animation
+  const springConfig = { stiffness: 30, damping: 5 };
 
   const jackY = useSpring(
-    useTransform(scrollYProgress, [0, 1], ["0%", "60%"]),
+    useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
     springConfig,
   );
   const titleY = useSpring(
-    useTransform(scrollYProgress, [0, 1], ["0%", "30%"]),
+    useTransform(scrollYProgress, [0, 1], ["0%", "25%"]),
     springConfig,
   );
   const horizonY = useSpring(
-    useTransform(scrollYProgress, [0, 1], ["0%", "20%"]),
+    useTransform(scrollYProgress, [0, 1], ["0%", "50%"]),
     springConfig,
   );
 
@@ -40,12 +40,12 @@ const Hero = () => {
             src="/hero/title.webp"
             alt="Title"
             loading="lazy"
-            className="mx-auto mt-[60px] h-[159px] w-[273px] tablet:mb-[100px] tablet:mt-[200px] laptop:h-[309px] laptop:w-[530px]"
+            className="mx-auto mt-[60px] h-[159px] w-[273px] tablet:mb-[20px] tablet:mt-[150px] tablet:h-[200px] tablet:w-auto laptop:mb-[70px] laptop:h-[309px] laptop:w-[530px]"
           />
           <Button
             text={lan == "eng" ? "PLAY & WIN NOW!" : "JOGUE E GANHE AGORA!"}
           />
-          <p className="text-theme-blue mt-[20px] font-coustard font-black leading-[26px] tracking-[0.25px] laptop:mt-[40px] laptop:text-[48px]">
+          <p className="text-theme-blue mt-[20px] font-coustard font-black leading-[26px] tracking-[0.25px] laptop:mt-[60px] laptop:text-[48px]">
             {lan == "eng" ? "JUMP HIGH, EARN $100" : "SALTE ALTO, GANHE $ 100"}
           </p>
         </motion.div>

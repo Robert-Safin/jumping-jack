@@ -16,7 +16,7 @@ const Board = () => {
         className="absolute top-0 -z-10 h-full w-full object-cover"
         loading="lazy"
       />
-      <div className="z-20 mx-auto flex max-w-[1440px] justify-center px-3 pt-[40px]">
+      <div className="z-20 mx-auto flex max-w-[1440px] justify-center px-3 pt-[40px] tablet:px-12">
         <div className="flex flex-col-reverse laptop:flex-row laptop:space-x-4">
           <div className="flex flex-col-reverse space-y-6 laptop:flex-col">
             <div className="border-theme-blue mt-6 overflow-hidden rounded-[19px] border-[1px] laptop:mt-0 laptop:h-[440px] laptop:w-[772px]">
@@ -97,12 +97,12 @@ const Board = () => {
           </div>
         </div>
       </div>
-      <div className="mb-[70px] mt-[40px] flex justify-center laptop:mb-[90px] laptop:mt-[60px]">
+      <div className="mb-[40px] mt-[40px] flex justify-center tablet:mb-[40px] tablet:mt-[60px] laptop:mb-[60px] laptop:mt-[60px]">
         <Button
           text={lan == "eng" ? "JUMP IN & WIN BIG!" : "ENTRE E GANHE MUITO!"}
         />
       </div>
-      <p className="mx-auto max-w-[300px] text-center font-geist text-[11px] font-semibold leading-[11px] text-theme-yellow">
+      <p className="mx-auto max-w-[300px] text-center font-geist text-[11px] font-semibold leading-[11px] text-theme-yellow tablet:max-w-full">
         {lan == "eng"
           ? "18+ only. By playing, you agree to our "
           : "Somente maiores de 18 anos. Ao jogar, você concorda com nossos "}

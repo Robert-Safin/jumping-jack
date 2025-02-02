@@ -56,7 +56,7 @@ const Nav = () => {
           className="h-[30px] w-[60px] laptop:h-[50px] laptop:w-[100px]"
         />
       </Link>
-      <p className="text-theme-blue w-[246px] text-center font-geist text-[11px] font-black leading-[18px] laptop:w-full laptop:text-[32px]">
+      <p className="text-theme-blue w-[246px] text-center font-geist text-[11px] font-black leading-[18px] tablet:w-full tablet:text-[20px] laptop:text-[32px]">
         {lan == "eng"
           ? "JUMP CHALLENGE ENDS IN"
           : "O DESAFIO DE SALTO TERMINA EM"}
