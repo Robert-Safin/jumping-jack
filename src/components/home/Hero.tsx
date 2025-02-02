@@ -69,7 +69,7 @@ const Hero = () => {
           src="/hero/overlay.webp"
           alt="shadow overlay"
           fetchPriority="high"
-          className="pointer-events-none absolute top-0 z-40 h-full w-full"
+          className="pointer-events-none absolute top-0 z-40 h-auto w-full"
           style={{ y: horizonY }}
         />
 

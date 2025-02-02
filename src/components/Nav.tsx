@@ -67,7 +67,10 @@ const Nav = () => {
         {String(timeLeft.seconds).padStart(2, "0")}
       </p>
       <Select onValueChange={setLan} value={lan}>
-        <SelectTrigger className="w-[128px] text-[11px]">
+        <SelectTrigger
+          className="w-[128px] text-[11px]"
+          aria-label="Language selection"
+        >
           <SelectValue defaultValue={"eng"} />
         </SelectTrigger>
         <SelectContent className="bg-theme-brown-2">

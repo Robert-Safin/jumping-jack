@@ -33,9 +33,9 @@ const Board = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2 laptop:space-x-4">
                   <div className="bg-theme-blue h-2 w-2 rounded-full laptop:h-3 laptop:w-3" />
-                  <h5 className="font-geist text-[18px] font-black leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px] laptop:tracking-[0.6px]">
+                  <h4 className="font-geist text-[18px] font-black leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px] laptop:tracking-[0.6px]">
                     {lan === "eng" ? "LIVE ACTIVITY" : "AO VIVO"}
-                  </h5>
+                  </h4>
                 </div>
                 <p className="text-theme-blue bg-theme-blue border-theme-blue rounded-[7.2px] border-[1px] bg-opacity-[16%] p-2 font-geist font-[12px] leading-[12px] laptop:text-[20px] laptop:leading-[20px]">
                   4 {lan === "eng" ? "Players" : "Jogadoras"}
@@ -59,9 +59,9 @@ const Board = () => {
             <div className="flex items-center justify-between px-3 pb-[24px] laptop:px-6">
               <div className="flex items-center space-x-2 laptop:space-x-4">
                 <div className="bg-theme-blue h-2 w-2 rounded-full laptop:h-3 laptop:w-3" />
-                <h5 className="font-geist text-[22px] font-black leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px]">
+                <h4 className="font-geist text-[22px] font-black leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px]">
                   {lan === "eng" ? "LEADERBOARD" : "RANKING"}
-                </h5>
+                </h4>
               </div>
               <div className="text-theme-blue bg-theme-blue border-theme-blue flex items-center space-x-2 rounded-[7.2px] border-[1px] bg-opacity-[16%] p-2 font-geist font-[12px] leading-[12px] laptop:text-[20px] laptop:leading-[20px]">
                 <Trophy className="h-[13px] w-[13px] laptop:h-[18px] laptop:w-[18px]" />{" "}
