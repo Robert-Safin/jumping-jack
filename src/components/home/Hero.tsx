@@ -53,6 +53,8 @@ const Hero = () => {
         {/* Background */}
         <motion.img
           src="/hero/background.webp"
+          srcSet="/hero/background-small.webp 600w, /hero/background.webp 1200w"
+          sizes="(max-width: 768px) 600px, 1200px"
           alt="background"
           className="absolute z-10 h-full w-full object-cover"
           style={{ y: horizonY }}
