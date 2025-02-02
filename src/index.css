@@ -2,8 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('woff2');
+  font-display: swap;
+}
 
-@keyframes reverse-bounce {
+@font-face {
+  font-family: 'Coustard-Black';
+  src: url('/fonts/Coustard-Black.ttf') format('woff2');
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Geist-Mono';
+  src: url('/fonts/GeistMono-VariableFont_wght.ttf') format('woff2');
+  font-display: swap;
+}
+
+
+/* @keyframes reverse-bounce {
   0%, 100% {
     transform: translateY(0%);
   }
@@ -14,4 +33,4 @@
 
 .reverse-bounce {
   animation: reverse-bounce 1.234000s infinite ease-in-out;
-}
+} */

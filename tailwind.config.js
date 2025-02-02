@@ -10,8 +10,8 @@ export default {
     extend: {
       fontFamily:{
         inter: "Inter",
-        geist: "Geist Mono",
-        coustard: "Coustard"
+        geist: "Geist-Mono",
+        coustard: "Coustard-Black"
       },
       colors: {
         "theme-yellow": "#FEF986",

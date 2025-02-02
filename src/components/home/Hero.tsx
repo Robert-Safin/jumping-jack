@@ -54,9 +54,9 @@ const Hero = () => {
         <motion.img
           src="/hero/background.webp"
           alt="background"
-          loading="lazy"
           className="absolute z-10 h-full w-full object-cover"
           style={{ y: horizonY }}
+          fetchPriority="high"
         />
 
         {/* Overlay */}
