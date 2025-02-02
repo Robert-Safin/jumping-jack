@@ -40,6 +40,8 @@ const Hero = () => {
         >
           <img
             src="/hero/title.webp"
+            width="273"
+            height="159"
             alt="Title"
             loading="lazy"
             className="mx-auto mt-[60px] h-[159px] w-[273px] tablet:mb-[20px] tablet:mt-[150px] tablet:h-[200px] tablet:w-auto laptop:mb-[70px] laptop:h-[309px] laptop:w-[530px]"
@@ -55,6 +57,8 @@ const Hero = () => {
         {/* Background */}
         <motion.img
           src="/hero/background.webp"
+          width="450"
+          height="600"
           srcSet="/hero/background-small.webp 600w, /hero/background.webp 1200w"
           sizes="(max-width: 768px) 600px, 1200px"
           alt="background"
@@ -67,22 +71,28 @@ const Hero = () => {
         {/* Overlay */}
         <motion.img
           src="/hero/overlay.webp"
+          width="450"
+          height="600"
           alt="shadow overlay"
           fetchPriority="high"
-          className="pointer-events-none absolute top-0 z-40 h-auto w-full"
+          className="pointer-events-none absolute top-0 z-40 h-full w-full"
           style={{ y: horizonY }}
         />
 
         {/* Parallax Effect on Jack Image */}
         <motion.img
           src="/hero/jack.webp"
-          alt=""
+          width="450"
+          height="500"
+          alt="jumping jack"
           className="absolute bottom-[20px] z-30 w-full"
           style={{ y: jackY }}
         />
 
         {/* Partition */}
         <img
+          width="350"
+          height="600"
           src="/hero/partition.webp"
           alt="front rocks"
           loading="lazy"
