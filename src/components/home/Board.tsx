@@ -20,7 +20,7 @@ const Board = () => {
         <div className="flex flex-col-reverse laptop:flex-row laptop:space-x-4">
           <div className="flex flex-col-reverse space-y-6 laptop:flex-col">
             <div className="border-theme-blue mt-6 overflow-hidden rounded-[19px] border-[1px] laptop:mt-0 laptop:h-[440px] laptop:w-[772px]">
-              <video muted controls>
+              <video muted controls className="h-full w-full">
                 <source src="/hero/old/jackshort.webm" type="video/webm" />
                 <source src="/hero/old/jackfinal.webm" type="video/webm" />
                 {lan === "eng"
@@ -33,7 +33,7 @@ const Board = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2 laptop:space-x-4">
                   <div className="bg-theme-blue h-2 w-2 rounded-full laptop:h-3 laptop:w-3" />
-                  <h5 className="font-geist text-[22px] font-black leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px] laptop:tracking-[0.6px]">
+                  <h5 className="font-geist text-[18px] font-black leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px] laptop:tracking-[0.6px]">
                     {lan === "eng" ? "LIVE ACTIVITY" : "AO VIVO"}
                   </h5>
                 </div>

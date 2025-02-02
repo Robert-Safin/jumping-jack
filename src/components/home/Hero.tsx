@@ -38,6 +38,8 @@ const Hero = () => {
         >
           <img
             src="/hero/title.webp"
+            width="500px"
+            height="300px"
             alt="Title"
             loading="lazy"
             className="mx-auto mt-[60px] h-[159px] w-[273px] tablet:mb-[20px] tablet:mt-[150px] tablet:h-[200px] tablet:w-auto laptop:mb-[70px] laptop:h-[309px] laptop:w-[530px]"
@@ -57,6 +59,8 @@ const Hero = () => {
           className="absolute z-10 h-full w-full object-cover"
           style={{ y: horizonY }}
           fetchPriority="high"
+          width="700px"
+          height="500px"
         />
 
         {/* Overlay */}
@@ -66,6 +70,8 @@ const Hero = () => {
           loading="lazy"
           className="pointer-events-none absolute top-0 z-40 h-full w-full"
           style={{ y: horizonY }}
+          width="800px"
+          height="400px"
         />
 
         {/* Parallax Effect on Jack Image */}
@@ -74,6 +80,8 @@ const Hero = () => {
           alt=""
           className="absolute bottom-[20px] z-30 w-full"
           style={{ y: jackY }}
+          width="800px"
+          height="500px"
         />
 
         {/* Partition */}
@@ -82,6 +90,8 @@ const Hero = () => {
           alt="front rocks"
           loading="lazy"
           className="absolute bottom-0 z-40 w-full"
+          width="800px"
+          height="500px"
         />
       </div>
     </>
