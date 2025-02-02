@@ -1,9 +1,11 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Button from "../ui/button";
 import useLocalization from "@/lib/useLocalization";
 
 const Hero = () => {
+  const [loaded, setLoaded] = useState(false);
+
   const ref = useRef(null);
   const { lan } = useLocalization();
   const { scrollYProgress } = useScroll({
@@ -57,8 +59,9 @@ const Hero = () => {
           sizes="(max-width: 768px) 600px, 1200px"
           alt="background"
           className="absolute z-10 h-full w-full object-cover"
-          style={{ y: horizonY }}
+          style={{ y: loaded ? horizonY : "0%" }} // Only animate after load
           fetchPriority="high"
+          onLoad={() => setLoaded(true)} // Set state when image loads
         />
 
         {/* Overlay */}
