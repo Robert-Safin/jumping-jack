@@ -63,7 +63,7 @@ const Hero = () => {
         <motion.img
           src="/hero/overlay.webp"
           alt="shadow overlay"
-          loading="lazy"
+          fetchPriority="high"
           className="pointer-events-none absolute top-0 z-40 h-full w-full"
           style={{ y: horizonY }}
         />
