@@ -10,7 +10,12 @@ const Board = () => {
 
   return (
     <div className="relative z-0">
-      <img src="/hero/partition.webp" alt="" className="w-full rotate-180" />
+      <img
+        src="/hero/partition.webp"
+        alt="rock divider"
+        className="w-full rotate-180"
+        loading="lazy"
+      />
       <img
         src="/hero/gallery-bg.webp"
         alt="background"
@@ -68,7 +73,7 @@ const Board = () => {
             <div className="flex items-center justify-between px-3 pb-[24px] laptop:px-6">
               <div className="flex items-center space-x-2 laptop:space-x-4">
                 <div className="bg-theme-blue h-2 w-2 rounded-full laptop:h-3 laptop:w-3" />
-                <h4 className="font-geist text-[22px] font-black leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px]">
+                <h4 className="font-geist text-[18px] font-medium leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px] laptop:tracking-[0.6px]">
                   {lan === "eng" ? "LEADERBOARD" : "RANKING"}
                 </h4>
               </div>
