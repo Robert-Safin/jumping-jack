@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef, useState } from "react";
 import Button from "../ui/button";
 import useLocalization from "@/lib/useLocalization";
+import { handleClickBuffer } from "@/lib/addToBuffer";
 
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -44,9 +45,11 @@ const Hero = () => {
             loading="lazy"
             className="mx-auto mt-[60px] h-[159px] w-[273px] tablet:mb-[20px] tablet:mt-[150px] tablet:h-[200px] tablet:w-auto laptop:mb-[70px] laptop:h-[309px] laptop:w-[530px]"
           />
-          <Button
-            text={lan == "eng" ? "PLAY & WIN NOW!" : "JOGUE E GANHE AGORA!"}
-          />
+          <div onClick={(e) => handleClickBuffer(e, true)}>
+            <Button
+              text={lan == "eng" ? "PLAY & WIN NOW!" : "JOGUE E GANHE AGORA!"}
+            />
+          </div>
           <p className="text-theme-blue mt-[20px] font-coustard font-black leading-[26px] tracking-[0.25px] laptop:mt-[60px] laptop:text-[48px]">
             {lan == "eng" ? "JUMP HIGH, EARN $100" : "SALTE ALTO, GANHE $ 100"}
           </p>
