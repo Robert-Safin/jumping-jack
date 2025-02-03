@@ -70,6 +70,8 @@ const Hero = () => {
         {/* Overlay */}
         <motion.img
           src="/hero/overlay.webp"
+          srcSet="/hero/overlay-small.webp 600w, /hero/overlay.webp 1200w"
+          sizes="(max-width: 768px) 600px, 1200px"
           alt="shadow overlay"
           fetchPriority="high"
           className="pointer-events-none absolute top-0 z-40 h-full w-full"
