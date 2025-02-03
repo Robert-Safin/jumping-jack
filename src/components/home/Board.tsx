@@ -13,7 +13,7 @@ const Board = () => {
       <img
         src="/hero/partition.webp"
         alt="rock divider"
-        className="w-full rotate-180"
+        className="relative -top-[1px] w-full rotate-180"
         loading="lazy"
       />
       <img
