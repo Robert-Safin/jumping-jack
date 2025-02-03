@@ -3,8 +3,8 @@ import useLocalization from "@/lib/useLocalization";
 const TNC = () => {
   const { lan } = useLocalization();
   return (
-    <div className="bg-white text-black">
-      <div className="max-w-[1440px] px-8 py-[100px] laptop:px-16">
+    <div className="relative z-10 bg-theme-brown-1 text-white">
+      <div className="z-20 max-w-[1440px] px-8 py-[100px] laptop:px-16">
         <h1 className="mb-6 text-3xl font-bold">
           {lan === "eng"
             ? "Jumping Jack Challenge - Terms and Conditions"

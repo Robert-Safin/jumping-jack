@@ -37,7 +37,7 @@ const Hero = () => {
       >
         <motion.div
           style={{ y: titleY }}
-          className="items-center-center absolute right-0 top-0 z-50 flex h-full w-full flex-col items-center"
+          className="items-center-center absolute right-0 top-0 z-50 flex h-full w-full flex-col items-center tablet:top-10 laptop:top-20"
         >
           <img
             src="/hero/title.webp"

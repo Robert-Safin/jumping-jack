@@ -24,7 +24,13 @@ const Board = () => {
               className="border-theme-blue mt-6 overflow-hidden rounded-[19px] border-[1px] laptop:mt-0 laptop:h-[440px] laptop:w-[772px]"
               onClick={(e) => handleClickBuffer(e, false)}
             >
-              <video muted controls className="h-full w-full">
+              <video
+                muted
+                controls
+                autoPlay
+                className="h-full w-full object-cover"
+              >
+                <source src="/vid/video.mp4" type="video/mp4" />
                 <source src="/vid/video.webm" type="video/webm" />
                 {lan === "eng"
                   ? "Your browser does not support the video tag."
@@ -36,7 +42,7 @@ const Board = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2 laptop:space-x-4">
                   <div className="bg-theme-blue h-2 w-2 rounded-full laptop:h-3 laptop:w-3" />
-                  <h4 className="font-geist text-[18px] font-black leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px] laptop:tracking-[0.6px]">
+                  <h4 className="font-geist text-[18px] font-medium leading-[22px] tracking-[0.2px] text-white laptop:text-[38px] laptop:leading-[36px] laptop:tracking-[0.6px]">
                     {lan === "eng" ? "LIVE ACTIVITY" : "AO VIVO"}
                   </h4>
                 </div>
@@ -50,7 +56,7 @@ const Board = () => {
                   <p className="font-geist text-[18px] font-black leading-[20px] tracking-[0.36px] text-white laptop:text-[32px] laptop:leading-[38px]">
                     Kralion
                   </p>
-                  <p className="text-theme-blue font-geist text-[12px] font-black leading-[12px] laptop:text-[17px] laptop:leading-[20px]">
+                  <p className="text-theme-blue font-geist text-[12px] font-medium leading-[12px] laptop:text-[17px] laptop:leading-[20px]">
                     4 {lan === "eng" ? "minutes ago" : "minutos atrás"}
                   </p>
                 </div>
@@ -91,7 +97,7 @@ const Board = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="text-theme-blue font-geist text-[12px] font-black leading-[12px] laptop:text-[20px] laptop:leading-[20px]">
+                  <p className="text-theme-blue font-geist text-[12px] font-medium leading-[12px] laptop:text-[24px] laptop:leading-[20px]">
                     {p[1]} m
                   </p>
                 </div>
