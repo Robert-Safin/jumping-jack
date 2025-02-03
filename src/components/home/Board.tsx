@@ -34,9 +34,9 @@ const Board = () => {
                 controls
                 autoPlay
                 className="h-full w-full object-cover"
+                src="/vid/video.mp4"
               >
                 <source src="/vid/video.mp4" type="video/mp4" />
-                {/* <source src="/vid/video.webm" type="video/webm" /> */}
                 {lan === "eng"
                   ? "Your browser does not support the video tag."
                   : "Seu navegador não suporta a tag de vídeo."}
